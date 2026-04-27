@@ -1,0 +1,200 @@
+/* 變數定義 */
+:root {
+    --primary-orange: #FF6B00;
+    --dark-blue: #0A192F;
+    --light-blue: #112240;
+    --text-gray: #8892B0;
+    --text-white: #E6F1FF;
+    --transition: all 0.3s ease;
+}
+
+/* 基礎設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導覽列 */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.logo span {
+    color: var(--primary-orange);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+    padding-top: 80px;
+}
+
+.hero-subtitle {
+    color: var(--primary-orange);
+    font-family: monospace;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 600px;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: var(--transition);
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-orange);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e66000;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 107, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+/* 通用 Section 樣式 */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-orange);
+    bottom: -10px;
+    left: 0;
+}
+
+/* About & Contact */
+.about-content {
+    max-width: 800px;
+    color: var(--text-gray);
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    color: var(--text-white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-orange);
+    padding-bottom: 2px;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--light-blue);
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+/* 響應式微調 */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* 手機版簡化，僅保留 Logo */
+    .hero { text-align: center; }
+    .hero-description { margin: 0 auto 40px; }
+}
